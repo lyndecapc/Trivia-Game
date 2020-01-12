@@ -1,0 +1,12 @@
+body {
+    background-image: url("../images/colors-bkgrnd.jpg");
+    font-family: 'Henny Penny', cursive;
+}
+
+.jumbotron {
+    text-align: center;
+    font-family: 'Henny Penny', cursive;
+    color: rgb(235, 212, 83);
+    font-size: 80px;
+} 
+
