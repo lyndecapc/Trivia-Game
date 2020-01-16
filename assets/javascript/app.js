@@ -13,8 +13,6 @@
     //CREATE: basic HTML
 //PSEUDOCODE
 
-$(document).ready(function) () {
-
     //GLOBAL VARIABLES and ARRAYS
     var questions = [{
         text: "question text",
@@ -65,4 +63,3 @@ $(document).ready(function) () {
         
 
   
-}
