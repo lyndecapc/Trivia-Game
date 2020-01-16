@@ -16,18 +16,53 @@
 $(document).ready(function) () {
 
     //GLOBAL VARIABLES and ARRAYS
-    //variables
+    var questions = [{
+        text: "question text",
+        answers: ["1st", "2nd", "3rd", "4th"],
+        correct: ""
+    }]
+
+    var timeRemianing = 3;
+    var timerInterval;
+    var correct = 0;
+    var incorrect =0;
+    var currentIndex = 0;
+
+
     //questions and answer arrays
 
     //FUNCTIONS
-    //Randomly choose question from array
+    //timer functionality: 
+    //function for timerw
+        //decrement time
+        //check if time has run out
+            //if yes, increment current Index, show correct answer, move to next question
+    //function to start timer - set length (timerInterval calls timer function every second)
 
-    //Timer start countdown stop
-   
-    //click function to choose answer
+    //function to stop timer 
+        //clear timerInterval 
+        //reset time remaining
 
-    //keeping score score screen?
+    //other functions:
+        //function for displaying questions
+            //determine what number question we are on with currentIndex
+            //check if currentIndex === questions.length
+            //if yes, hide question, show results with correct, incorrect, and unanswered question stats
+            //update DOM with current question's text and answers using (questions [currentIndex]);
+            //start timer
+        
+        //event listener for start and reset buttons
+            //hides welcome screen
+            //shows question screen
+            //loads first question and updates timer
 
+        //event listener for answer button
+            //check whether answer is correct (compare to questiobs[currentIndex].correctanswer)
+            //show message for correct or incorrect
+            //stop timer
+            //after three seconds, increment currentIndex and call display question function
 
-    //game reset
+        
+
+  
 }
