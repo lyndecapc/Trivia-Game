@@ -14,7 +14,7 @@
 //PSEUDOCODE
 
     //GLOBAL VARIABLES and ARRAYS
-    var questions = [{
+    var question = [{
         text: "question text",
         answers: ["1st", "2nd", "3rd", "4th"],
         correct: ""
@@ -31,7 +31,7 @@
 
     //FUNCTIONS
     //timer functionality: 
-    //function for timerw
+    //function for timer
         //decrement time
         //check if time has run out
             //if yes, increment current Index, show correct answer, move to next question
@@ -43,19 +43,32 @@
 
     //other functions:
         //function for displaying questions
+            function displayQuestion () {
+                    $("#questions").html("<h2>" + question.text + "</h2>");
+                    for (var i = 0; i < question.length; i++) {
+                        
+                    }
+            };
             //determine what number question we are on with currentIndex
             //check if currentIndex === questions.length
             //if yes, hide question, show results with correct, incorrect, and unanswered question stats
             //update DOM with current question's text and answers using (questions [currentIndex]);
             //start timer
+           
         
         //event listener for start and reset buttons
             //hides welcome screen
             //shows question screen
             //loads first question and updates timer
+        $("#start").on("click", function() {
+            $("#welcome").hide();
+                console.log("Lynde");
+        });
+          
+    
 
         //event listener for answer button
-            //check whether answer is correct (compare to questiobs[currentIndex].correctanswer)
+            //check whether answer is correct (compare to questions[currentIndex].correctanswer)
             //show message for correct or incorrect
             //stop timer
             //after three seconds, increment currentIndex and call display question function
