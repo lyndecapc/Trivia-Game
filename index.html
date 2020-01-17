@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Trivia Game</title>
+  <title>Nashville Trivia Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -13,7 +13,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <!--Google Fonts Link-->
-  <link href="https://fonts.googleapis.com/css?family=Henny+Penny&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gayathri&display=swap" rel="stylesheet">
 
 
 </head>
@@ -21,7 +21,7 @@
 <body>
   <div class="jumbotron jumbotron-fluid" style="background-color: #757575;">
     <div class="container">
-      Trivia Game
+      Nashville Trivia Game
     </div>
   </div>
 
@@ -30,18 +30,22 @@
     <button class="btn btn-success" id="start">Start Game</button>
   </div>
 
+  <div id="timeDisplay"></div>
+
   <div id="game">
 
-    <div id="timeDisplay"></div>
+    
     <br>
     <div id="questions"></div>
     <br>
-    <p>
+    <div id="answers">
+      <p>
       <button class="btn btn-success">Answer 1</button>
       <button class="btn btn-success">Answer 2</button>
       <button class="btn btn-success">Answer 3</button>
       <button class="btn btn-success">Answer 4</button>
     </p>
+  </div>
   </div>
 
   <div id="results">

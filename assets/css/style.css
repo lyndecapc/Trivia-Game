@@ -1,12 +1,21 @@
 body {
-    background-image: url("../images/colors-bkgrnd.jpg");
-    font-family: 'Henny Penny', cursive;
+    background-image: url("../images/Ryman.jpg");
+  background-repeat: no-repeat;
+background-size: cover;
+    font-family: 'Gayathri', sans-serif;
 }
 
 .jumbotron {
     text-align: center;
-    font-family: 'Henny Penny', cursive;
-    color: rgb(235, 212, 83);
+    font-family: 'Gayathri', sans-serif;
+    color: rgb(10, 2, 19);
     font-size: 80px;
 } 
 
+h2 {
+    color: white;
+}
+
+#timeDisplay {
+    color: white;
+}

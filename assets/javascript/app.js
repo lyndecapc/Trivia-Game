@@ -32,11 +32,11 @@ var questions = [
     }
 ];
 
-var timeRemaining = 20;
+var timeRemaining = 5;
 var timerInterval;
 var correct = 0;
 var incorrect = 0;
-var currentIndex; //#question currently on
+var currentIndex = 0; //#question currently on
 var clockRunning = false;
 
 //questions and answer arrays
@@ -47,16 +47,22 @@ var clockRunning = false;
 //decrement time
 //check if time has run out
 //if yes, increment current Index, show correct answer, move to next question
+
 function decrement() {
     $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3>");
     timeRemaining--;
-    if (timeRemaining === 0) {
-        stop();
+   if (timeRemaining === 0) {
+        currentIndex++;
+        console.log(currentIndex);
+       stop();
+       // $("#answers").html("<p>Time is up! The corect answers is: " + currentIndex.Answers[currentIndex.correctAns] + "</p>");
+        displayQuestion();
+        startTimer();
+
         //  currentIndex++;
         //show questions.answer[correct]
         //displayQuestion () 
-    }
-};
+    }};
 
 
 //function to start timer - set length (timerInterval calls timer function every second)
@@ -66,7 +72,7 @@ function startTimer() {
         timerInterval = setInterval(decrement, 1000);
         clockRunning = true;
     }
-}
+};
 
 //function to stop timer 
 //clear timerInterval 
@@ -79,13 +85,12 @@ function stop() {
 //other functions:
 //function for displaying questions
 function displayQuestion() {
-    currentIndex = questions[0].text
-    $("#questions").html("<h2>" + currentIndex + "</h2>");
-    console.log(questions[0].text);
+   
+    $("#questions").html("<h2>" + questions[currentIndex].text + "</h2>");
+    console.log(questions[currentIndex].text);
     for (var i = 0; i < questions[i].length; i++) {
     
-}
-};
+}};
 
 //determine what number question we are on with currentIndex
 //check if currentIndex === questions.length
@@ -100,6 +105,7 @@ function displayQuestion() {
 //loads first question and updates timer
 $("#start").on("click", function () {
     $("#welcome").hide();
+    $("#results").hide();
     startTimer();
     displayQuestion();
     console.log("Lynde");
@@ -111,4 +117,4 @@ $("#start").on("click", function () {
 //check whether answer is correct (compare to questions[currentIndex].correctanswer)
 //show message for correct or incorrect
 //stop timer
-//after three seconds, increment currentIndex and call display question function
+//after three seconds, increment currentIndex and call display questionfunction
