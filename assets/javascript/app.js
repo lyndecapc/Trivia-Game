@@ -14,17 +14,29 @@
 //PSEUDOCODE
 
 //GLOBAL VARIABLES and ARRAYS
-var question = [{
-    text: "question text",
-    answers: ["1st", "2nd", "3rd", "4th"],
-    correct: ""
-}]
+var questions = [
+    {
+    text: "What long-time game show host was at one time a Nashville weather personality?",
+    answers: ["Alex Trebek", "Steve Harvey", "Wayne Brady", "Pat Sajak"],
+    correctAns: 3
+    },
+    {
+    text: "What was the Music Row destination where you could ride a mechanical bull?",
+    answers: ["Gilley's", "Mabel's", "Sony", "The Broken Spoke"],
+    correctAns: 0
+    },
+    {
+     text: "What was the #1 tourist attraction in Nashville until 1997?",
+     answers: ["The Grand Ole Opry", "Opryland", "Tootsie's", "Music Row"],
+     correctAns: 1  
+    }
+];
 
 var timeRemaining = 20;
 var timerInterval;
 var correct = 0;
 var incorrect = 0;
-var currentIndex = 0; //#question currently on
+var currentIndex; //#question currently on
 var clockRunning = false;
 
 //questions and answer arrays
@@ -40,10 +52,11 @@ function decrement() {
     timeRemaining--;
     if (timeRemaining === 0) {
         stop();
-    //  currentIndex++;
-    //show question.answer[correct]
-    //displayQuestion () 
-}};
+        //  currentIndex++;
+        //show questions.answer[correct]
+        //displayQuestion () 
+    }
+};
 
 
 //function to start timer - set length (timerInterval calls timer function every second)
@@ -66,11 +79,14 @@ function stop() {
 //other functions:
 //function for displaying questions
 function displayQuestion() {
-    $("#questions").html("<h2>" + question.text + "</h2>");
-    for (var i = 0; i < question.length; i++) {
-        question[i];
-    }
+    currentIndex = questions[0].text
+    $("#questions").html("<h2>" + currentIndex + "</h2>");
+    console.log(questions[0].text);
+    for (var i = 0; i < questions[i].length; i++) {
+    
+}
 };
+
 //determine what number question we are on with currentIndex
 //check if currentIndex === questions.length
 //if yes, hide question, show results with correct, incorrect, and unanswered question stats
@@ -85,6 +101,7 @@ function displayQuestion() {
 $("#start").on("click", function () {
     $("#welcome").hide();
     startTimer();
+    displayQuestion();
     console.log("Lynde");
 });
 
