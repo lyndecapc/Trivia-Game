@@ -8,93 +8,90 @@
 //also will see a restart button
 //if they click the restart button, the quiz starts over
 //HTML PLANNING: 
-    //Three main sections: Welcome screen and start button, questions div with place for timer, the question text and the answers (dynamic or hard coded)
-    //results div with place for correct, incorrect, and unanswered questions stats AND restart button
-    //CREATE: basic HTML
+//Three main sections: Welcome screen and start button, questions div with place for timer, the question text and the answers (dynamic or hard coded)
+//results div with place for correct, incorrect, and unanswered questions stats AND restart button
+//CREATE: basic HTML
 //PSEUDOCODE
 
-    //GLOBAL VARIABLES and ARRAYS
-    var question = [{
-        text: "question text",
-        answers: ["1st", "2nd", "3rd", "4th"],
-        correct: ""
-    }]
+//GLOBAL VARIABLES and ARRAYS
+var question = [{
+    text: "question text",
+    answers: ["1st", "2nd", "3rd", "4th"],
+    correct: ""
+}]
 
-    var timeRemaining = 30;
-    var timerInterval;
-    var correct = 0;
-    var incorrect =0;
-    var currentIndex = 0; //#question currently on
-    var clockRunning = false;
+var timeRemaining = 20;
+var timerInterval;
+var correct = 0;
+var incorrect = 0;
+var currentIndex = 0; //#question currently on
+var clockRunning = false;
 
-    //questions and answer arrays
+//questions and answer arrays
 
-    //FUNCTIONS
-    //TIMER FUNCTIONS:
-    //function for timer
-        //decrement time
-        //check if time has run out
-            //if yes, increment current Index, show correct answer, move to next question
-        function decrement() {
-            $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3>");
-            timeRemaining--;
-           // if (timeRemaining === 0) {
-              //  currentIndex++;
-                //show question.answer[correct]
-                //displayQuestion () 
-            }
-        
-        
-    //function to start timer - set length (timerInterval calls timer function every second)
+//FUNCTIONS
+//TIMER FUNCTIONS:
+//function for timer
+//decrement time
+//check if time has run out
+//if yes, increment current Index, show correct answer, move to next question
+function decrement() {
+    $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3>");
+    timeRemaining--;
+    if (timeRemaining === 0) {
+        stop();
+    //  currentIndex++;
+    //show question.answer[correct]
+    //displayQuestion () 
+}};
 
-        function startTimer () {
-            if (!clockRunning) {
-                timerInterval = setInterval(decrement, 1000);
-                clockRunning = true;
-            }
-        }
 
-    //function to stop timer 
-        //clear timerInterval 
-        //reset time remaining
-        function timerReset () {
-            clearInterval(intervalId);
-            clockRunning = false;
-        }
+//function to start timer - set length (timerInterval calls timer function every second)
 
-    //other functions:
-        //function for displaying questions
-            function displayQuestion () {
-                    $("#questions").html("<h2>" + question.text + "</h2>");
-                    for (var i = 0; i < question.length; i++) {
-                        question[i];
-                    }
-            };
-            //determine what number question we are on with currentIndex
-            //check if currentIndex === questions.length
-            //if yes, hide question, show results with correct, incorrect, and unanswered question stats
-            //update DOM with current question's text and answers using (questions [currentIndex]);
-            //start timer
-           
-        
-        //event listener for start and reset buttons
-            //hides welcome screen
-            //shows question screen
-            //loads first question and updates timer
-        $("#start").on("click", function() {
-            $("#welcome").hide();
-            startTimer();
-                console.log("Lynde");
-        });
-          
-    
+function startTimer() {
+    if (!clockRunning) {
+        timerInterval = setInterval(decrement, 1000);
+        clockRunning = true;
+    }
+}
 
-        //event listener for answer button
-            //check whether answer is correct (compare to questions[currentIndex].correctanswer)
-            //show message for correct or incorrect
-            //stop timer
-            //after three seconds, increment currentIndex and call display question function
+//function to stop timer 
+//clear timerInterval 
+//reset time remaining
+function stop() {
+    clearInterval(timerInterval);
+    clockRunning = false;
+}
 
-        
+//other functions:
+//function for displaying questions
+function displayQuestion() {
+    $("#questions").html("<h2>" + question.text + "</h2>");
+    for (var i = 0; i < question.length; i++) {
+        question[i];
+    }
+};
+//determine what number question we are on with currentIndex
+//check if currentIndex === questions.length
+//if yes, hide question, show results with correct, incorrect, and unanswered question stats
+//update DOM with current question's text and answers using (questions [currentIndex]);
+//start timer
 
-  
+
+//event listener for start and reset buttons
+//hides welcome screen
+//shows question screen
+//loads first question and updates timer
+$("#start").on("click", function () {
+    $("#welcome").hide();
+    startTimer();
+    console.log("Lynde");
+});
+
+
+
+//event listener for answer button
+//check whether answer is correct (compare to questions[currentIndex].correctanswer)
+//show message for correct or incorrect
+//stop timer
+//after three seconds, increment currentIndex and call display question function
