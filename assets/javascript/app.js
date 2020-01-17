@@ -77,13 +77,16 @@ function startTimer() {
 //function to stop timer 
 //clear timerInterval 
 //reset time remaining
+
 function stop() {
     clearInterval(timerInterval);
     clockRunning = false;
-}
+    timeRemaining = 5;
+};
 
 //other functions:
 //function for displaying questions
+
 function displayQuestion() {
    
     $("#questions").html("<h2>" + questions[currentIndex].text + "</h2>");
