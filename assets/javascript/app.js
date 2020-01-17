@@ -51,18 +51,24 @@ var clockRunning = false;
 function decrement() {
     $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3>");
     timeRemaining--;
-   if (timeRemaining === 0) {
+   if (timeRemaining === -1) {
         currentIndex++;
-        console.log(currentIndex);
        stop();
        // $("#answers").html("<p>Time is up! The corect answers is: " + currentIndex.Answers[currentIndex.correctAns] + "</p>");
         displayQuestion();
         startTimer();
+   }
+
+    else if (currentIndex === 3) {
+            $("#game").hide();
+            $("#results").show();
+    }
+        console.log(currentIndex);
 
         //  currentIndex++;
         //show questions.answer[correct]
         //displayQuestion () 
-    }};
+    };
 
 
 //function to start timer - set length (timerInterval calls timer function every second)
@@ -92,7 +98,7 @@ function displayQuestion() {
     $("#questions").html("<h2>" + questions[currentIndex].text + "</h2>");
     console.log(questions[currentIndex].text);
     for (var i = 0; i < questions[i].length; i++) {
-    
+   
 }};
 
 //determine what number question we are on with currentIndex
