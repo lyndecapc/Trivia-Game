@@ -20,7 +20,7 @@
         correct: ""
     }]
 
-    var timeRemaining = 30 *1000;
+    var timeRemaining = 30;
     var timerInterval;
     var correct = 0;
     var incorrect =0;
@@ -35,7 +35,8 @@
         //decrement time
         //check if time has run out
             //if yes, increment current Index, show correct answer, move to next question
-        function count() {
+        function decrement() {
+            $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3>");
             timeRemaining--;
            // if (timeRemaining === 0) {
               //  currentIndex++;
@@ -48,7 +49,7 @@
 
         function startTimer () {
             if (!clockRunning) {
-                timerInterval = setInterval(count, 1000);
+                timerInterval = setInterval(decrement, 1000);
                 clockRunning = true;
             }
         }
@@ -59,8 +60,6 @@
         function timerReset () {
             clearInterval(intervalId);
             clockRunning = false;
-            $("#timeDisplay").text(":30");
-            timeRemaining = 30 * 1000;
         }
 
     //other functions:
