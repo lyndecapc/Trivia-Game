@@ -14,21 +14,20 @@
 //PSEUDOCODE
 
 //GLOBAL VARIABLES and ARRAYS
-var questions = [
-    {
-    text: "What long-time game show host was at one time a Nashville weather personality?",
-    answers: ["Alex Trebek", "Steve Harvey", "Wayne Brady", "Pat Sajak"],
-    correctAns: "Pat Sajak"
+var questions = [{
+        text: "What long-time game show host was at one time a Nashville weather personality?",
+        answers: ["Alex Trebek", "Steve Harvey", "Wayne Brady", "Pat Sajak"],
+        correctAns: "Pat Sajak"
     },
     {
-    text: "What was the Music Row destination where you could ride a mechanical bull?",
-    answers: ["Gilley's", "Mabel's", "Sony", "The Broken Spoke"],
-    correctAns: "Gilley's"
+        text: "What was the Music Row destination where you could ride a mechanical bull?",
+        answers: ["Gilley's", "Mabel's", "Sony", "The Broken Spoke"],
+        correctAns: "Gilley's"
     },
     {
-     text: "What was the #1 tourist attraction in Nashville until 1997?",
-     answers: ["The Grand Ole Opry", "Opryland", "Tootsie's", "Music Row"],
-     correctAns: "Opryland" 
+        text: "What was the #1 tourist attraction in Nashville until 1997?",
+        answers: ["The Grand Ole Opry", "Opryland", "Tootsie's", "Music Row"],
+        correctAns: "Opryland"
     }
 ];
 
@@ -49,32 +48,32 @@ var clockRunning = false;
 //check if time has run out
 //if yes, increment current Index, show correct answer, move to next question
 
-function threeSeconds (){
+function threeSeconds() {
     $("#answers").empty();
     currentIndex++;
-        displayQuestion();
-        startTimer();
+    displayQuestion();
+    startTimer();
 }
 
 function decrement() {
-    $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3>");
+    $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3");
     timeRemaining--;
-   if (timeRemaining === -1) {
-        
-      
-       $("#answers").html("<p>Time is up! The corect answers is: " + questions[currentIndex].correctAns + "</p>");
-       
-       setTimeout(threeSeconds, 1000 * 3);
-       stop();
-    
-   }
+    if (timeRemaining === -1) {
 
-   console.log(currentIndex);
 
-        //  currentIndex++;
-        //show questions.answer[correct]
-        //displayQuestion () 
-    };
+        $("#answers").html("<h2>Time is up! The corect answers is: " + questions[currentIndex].correctAns + "</h2>");
+
+        setTimeout(threeSeconds, 1000 * 3);
+        stop();
+
+    }
+
+    console.log(currentIndex);
+
+    //  currentIndex++;
+    //show questions.answer[correct]
+    //displayQuestion () 
+};
 
 
 //function to start timer - set length (timerInterval calls timer function every second)
@@ -93,14 +92,14 @@ function startTimer() {
 function stop() {
     clearInterval(timerInterval);
     clockRunning = false;
-    timeRemaining = 5; 
+    timeRemaining = 5;
 };
 
 //other functions:
 //function for displaying questions
 
 function displayQuestion() {
-   
+
     $("#questions").html("<h2>" + questions[currentIndex].text + "</h2>");
     $(".btn1").html("<h2>" + questions[currentIndex].answers[0] + "</h2>");
     $(".btn2").html("<h2>" + questions[currentIndex].answers[1] + "</h2>");
@@ -108,9 +107,10 @@ function displayQuestion() {
     $(".btn4").html("<h2>" + questions[currentIndex].answers[3] + "</h2>");
     console.log(questions[currentIndex].text);
     for (var i = 0; i < questions[i].length; i++) {
-        
-    
-}};
+
+
+    }
+};
 
 //determine what number question we are on with currentIndex
 //check if currentIndex === questions.length

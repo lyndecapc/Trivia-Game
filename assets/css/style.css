@@ -14,12 +14,16 @@ background-size: cover;
 
 h2 {
     color: white;
+    text-align: center;
 }
 
 #timeDisplay {
     color: white;
+    text-align: center;
 }
 
 p {
     color: white;
+    text-align: center;
+    font-size: large;
 }
