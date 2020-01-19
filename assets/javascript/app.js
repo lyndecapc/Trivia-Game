@@ -59,11 +59,7 @@ function decrement() {
         startTimer();
    }
 
-    else if (currentIndex === 3) {
-            $("#game").hide();
-            $("#results").show();
-    }
-        console.log(currentIndex);
+   console.log(currentIndex);
 
         //  currentIndex++;
         //show questions.answer[correct]
@@ -96,9 +92,14 @@ function stop() {
 function displayQuestion() {
    
     $("#questions").html("<h2>" + questions[currentIndex].text + "</h2>");
+    $(".btn1").html("<h2>" + questions[currentIndex].answers[0] + "</h2>");
+    $(".btn2").html("<h2>" + questions[currentIndex].answers[1] + "</h2>");
+    $(".btn3").html("<h2>" + questions[currentIndex].answers[2] + "</h2>");
+    $(".btn4").html("<h2>" + questions[currentIndex].answers[3] + "</h2>");
     console.log(questions[currentIndex].text);
     for (var i = 0; i < questions[i].length; i++) {
-   
+        
+    
 }};
 
 //determine what number question we are on with currentIndex
