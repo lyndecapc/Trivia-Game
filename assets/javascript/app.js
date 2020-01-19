@@ -18,17 +18,17 @@ var questions = [
     {
     text: "What long-time game show host was at one time a Nashville weather personality?",
     answers: ["Alex Trebek", "Steve Harvey", "Wayne Brady", "Pat Sajak"],
-    correctAns: 3
+    correctAns: "Pat Sajak"
     },
     {
     text: "What was the Music Row destination where you could ride a mechanical bull?",
     answers: ["Gilley's", "Mabel's", "Sony", "The Broken Spoke"],
-    correctAns: 0
+    correctAns: "Gilley's"
     },
     {
      text: "What was the #1 tourist attraction in Nashville until 1997?",
      answers: ["The Grand Ole Opry", "Opryland", "Tootsie's", "Music Row"],
-     correctAns: 1  
+     correctAns: "Opryland" 
     }
 ];
 
@@ -39,6 +39,7 @@ var incorrect = 0;
 var currentIndex = 0; //#question currently on
 var clockRunning = false;
 
+
 //questions and answer arrays
 
 //FUNCTIONS
@@ -48,15 +49,24 @@ var clockRunning = false;
 //check if time has run out
 //if yes, increment current Index, show correct answer, move to next question
 
+function threeSeconds (){
+    $("#answers").empty();
+    currentIndex++;
+        displayQuestion();
+        startTimer();
+}
+
 function decrement() {
     $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3>");
     timeRemaining--;
    if (timeRemaining === -1) {
-        currentIndex++;
+        
+      
+       $("#answers").html("<p>Time is up! The corect answers is: " + questions[currentIndex].correctAns + "</p>");
+       
+       setTimeout(threeSeconds, 1000 * 3);
        stop();
-       // $("#answers").html("<p>Time is up! The corect answers is: " + currentIndex.Answers[currentIndex.correctAns] + "</p>");
-        displayQuestion();
-        startTimer();
+    
    }
 
    console.log(currentIndex);
@@ -83,7 +93,7 @@ function startTimer() {
 function stop() {
     clearInterval(timerInterval);
     clockRunning = false;
-    timeRemaining = 5;
+    timeRemaining = 5; 
 };
 
 //other functions:
