@@ -60,8 +60,7 @@ function threeSeconds() {
 
     else {displayQuestion();
     startTimer();
-}
-}
+}};
 
 function decrement() {
     $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3");
@@ -141,6 +140,16 @@ $("#start").on("click", function () {
     startTimer();
     displayQuestion();
     console.log("Lynde");
+});
+
+$("#restart").on("click", function () {
+    $("#welcome").hide();
+    $("#results").hide();
+    $("#game").show();
+    $("#timeDisplay").show();
+    currentIndex = 0;
+    startTimer();
+    displayQuestion();
 });
 
 
