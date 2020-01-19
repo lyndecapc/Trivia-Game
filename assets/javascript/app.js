@@ -12,6 +12,11 @@
 //results div with place for correct, incorrect, and unanswered questions stats AND restart button
 //CREATE: basic HTML
 //PSEUDOCODE
+$(document).ready(
+    $("#game").hide(),
+    $("#results").hide()
+    
+)
 
 //GLOBAL VARIABLES and ARRAYS
 var questions = [{
@@ -51,16 +56,18 @@ var clockRunning = false;
 function threeSeconds() {
     $("#answers").empty();
     currentIndex++;
-   
+
     if (currentIndex === questions.length) {
-        $("#game").hide();
-        $("#timeDisplay").hide();
         $("#results").show();
+        $("#game").hide();
+       
     }
 
-    else {displayQuestion();
-    startTimer();
-}};
+     else {
+        displayQuestion();
+        startTimer();
+    }
+};
 
 function decrement() {
     $("#timeDisplay").html("<h3>Time remaining: " + timeRemaining + "</h3");
@@ -114,11 +121,9 @@ function displayQuestion() {
     $(".btn4").html("<h2>" + questions[currentIndex].answers[3] + "</h2>");
     console.log(questions[currentIndex].text);
     for (var i = 0; i < questions[i].length; i++) {
-     
+
     }
-    if (currentIndex === questions.length) {
-        $("#game").hide();
-    }
+  
 
 
 };
@@ -137,6 +142,7 @@ function displayQuestion() {
 $("#start").on("click", function () {
     $("#welcome").hide();
     $("#results").hide();
+    $("#game").show();
     startTimer();
     displayQuestion();
     console.log("Lynde");
@@ -146,7 +152,6 @@ $("#restart").on("click", function () {
     $("#welcome").hide();
     $("#results").hide();
     $("#game").show();
-    $("#timeDisplay").show();
     currentIndex = 0;
     startTimer();
     displayQuestion();

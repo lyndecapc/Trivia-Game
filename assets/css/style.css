@@ -36,3 +36,9 @@ p {
     padding-left: 150px;
     padding-right: 150px;
 }
+
+#results {
+    text-align: center;
+    color: white;
+    font-size: larger;
+}
