@@ -51,8 +51,16 @@ var clockRunning = false;
 function threeSeconds() {
     $("#answers").empty();
     currentIndex++;
-    displayQuestion();
+   
+    if (currentIndex === questions.length) {
+        $("#game").hide();
+        $("#timeDisplay").hide();
+        $("#results").show();
+    }
+
+    else {displayQuestion();
     startTimer();
+}
 }
 
 function decrement() {
@@ -107,9 +115,13 @@ function displayQuestion() {
     $(".btn4").html("<h2>" + questions[currentIndex].answers[3] + "</h2>");
     console.log(questions[currentIndex].text);
     for (var i = 0; i < questions[i].length; i++) {
-
-
+     
     }
+    if (currentIndex === questions.length) {
+        $("#game").hide();
+    }
+
+
 };
 
 //determine what number question we are on with currentIndex

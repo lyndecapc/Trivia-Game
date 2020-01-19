@@ -27,3 +27,12 @@ p {
     text-align: center;
     font-size: large;
 }
+
+#welcome {
+    text-align: center;
+}
+
+.buttons {
+    padding-left: 150px;
+    padding-right: 150px;
+}
