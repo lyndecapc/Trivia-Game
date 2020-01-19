@@ -12,13 +12,15 @@
 //results div with place for correct, incorrect, and unanswered questions stats AND restart button
 //CREATE: basic HTML
 //PSEUDOCODE
+
+//Page loads with correct divs showing
 $(document).ready(
     $("#game").hide(),
     $("#results").hide()
-    
-)
+);
 
 //GLOBAL VARIABLES and ARRAYS
+//questions and answer arrays
 var questions = [{
         text: "What long-time game show host was at one time a Nashville weather personality?",
         answers: ["Alex Trebek", "Steve Harvey", "Wayne Brady", "Pat Sajak"],
@@ -36,15 +38,14 @@ var questions = [{
     }
 ];
 
+//global variables
 var timeRemaining = 5;
 var timerInterval;
 var correct = 0;
-var incorrect = 0;
+var wrong = 0;
 var currentIndex = 0; //#question currently on
 var clockRunning = false;
 
-
-//questions and answer arrays
 
 //FUNCTIONS
 //TIMER FUNCTIONS:
@@ -60,10 +61,8 @@ function threeSeconds() {
     if (currentIndex === questions.length) {
         $("#results").show();
         $("#game").hide();
-       
-    }
 
-     else {
+    } else {
         displayQuestion();
         startTimer();
     }
@@ -109,7 +108,7 @@ function stop() {
     timeRemaining = 5;
 };
 
-//other functions:
+//OTHER FUNCTIONS:
 //function for displaying questions
 
 function displayQuestion() {
@@ -123,9 +122,6 @@ function displayQuestion() {
     for (var i = 0; i < questions[i].length; i++) {
 
     }
-  
-
-
 };
 
 //determine what number question we are on with currentIndex
@@ -134,7 +130,7 @@ function displayQuestion() {
 //update DOM with current question's text and answers using (questions [currentIndex]);
 //start timer
 
-
+//EVENT LISTENERS:
 //event listener for start and reset buttons
 //hides welcome screen
 //shows question screen
@@ -157,10 +153,35 @@ $("#restart").on("click", function () {
     displayQuestion();
 });
 
-
-
 //event listener for answer button
 //check whether answer is correct (compare to questions[currentIndex].correctanswer)
 //show message for correct or incorrect
 //stop timer
 //after three seconds, increment currentIndex and call display questionfunction
+
+$("button").on("click", function (){
+console.log("Lynde")
+
+var userGuess = $(this).attr('class');
+console.log(userGuess);
+
+console.log(currentIndex);
+//if (userGuess === questions[currentIndex].correctAns) {
+    //stop();
+    //correct++;
+    //userGuess="";
+    //$("#answers").html("<p>Correct!</p>");
+
+} 
+
+//else {
+    //stop();
+    //wrong++;
+    //userGuess="";
+    //$("#answers").html("<p>Wrong! The correct answer is: " + questions[currentIndex].correctAns + "</p>");
+//}
+
+// if (userGuess === questions[currentIndex].correctAns) {
+       // console.log("Lynde")
+   
+);
