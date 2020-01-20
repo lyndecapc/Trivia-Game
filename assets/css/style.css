@@ -1,10 +1,10 @@
 body {
-    
+
     background: url("../images/Ryman.jpg");
 
     background-repeat: no-repeat;
     background-size: cover;
-    
+
     font-family: 'Gayathri', sans-serif;
 }
 
@@ -55,4 +55,8 @@ p {
     width: 60%;
     margin: 0 auto;
 
+}
+
+h3 {
+    color: white;
 }

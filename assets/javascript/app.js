@@ -56,7 +56,7 @@ var clockRunning = false;
 
 function threeSeconds() {
     $("#answers").empty();
-    currentIndex++;
+    currentIndex++
 
     if (currentIndex === questions.length) {
         $("#results").show();
@@ -114,10 +114,10 @@ function stop() {
 function displayQuestion() {
 
     $("#questions").html("<h2>" + questions[currentIndex].text + "</h2>");
-    $(".btn1").html("<h2>" + questions[currentIndex].answers[0] + "</h2>");
-    $(".btn2").html("<h2>" + questions[currentIndex].answers[1] + "</h2>");
-    $(".btn3").html("<h2>" + questions[currentIndex].answers[2] + "</h2>");
-    $(".btn4").html("<h2>" + questions[currentIndex].answers[3] + "</h2>");
+    $(".btn1").html("<h3>" + questions[currentIndex].answers[0] + "</h3>");
+    $(".btn2").html("<h3>" + questions[currentIndex].answers[1] + "</h3>");
+    $(".btn3").html("<h3>" + questions[currentIndex].answers[2] + "</h3>");
+    $(".btn4").html("<h3>" + questions[currentIndex].answers[3] + "</h3>");
     console.log(questions[currentIndex].text);
     for (var i = 0; i < questions[i].length; i++) {
 
@@ -159,29 +159,22 @@ $("#restart").on("click", function () {
 //stop timer
 //after three seconds, increment currentIndex and call display questionfunction
 
-$("button").on("click", function (){
-console.log("Lynde")
+$(".answer").on("click", function () {
+        console.log("Lynde")
 
-var userGuess = $(this).attr('class');
-console.log(userGuess);
+        var userGuess = $(this).find('h3').text();
+        console.log(userGuess);
 
-console.log(currentIndex);
-//if (userGuess === questions[currentIndex].correctAns) {
-    //stop();
-    //correct++;
-    //userGuess="";
-    //$("#answers").html("<p>Correct!</p>");
+        console.log(currentIndex);
+        if (userGuess === questions[currentIndex].correctAns) {
+            correct++;
+            $("#answers").html("<p>Correct!</p>");
 
-} 
+        } else {
+            wrong++;
+            $("#answers").html("<p>Wrong! The correct answer is: " + questions[currentIndex].correctAns + "</p>");
+        }
 
-//else {
-    //stop();
-    //wrong++;
-    //userGuess="";
-    //$("#answers").html("<p>Wrong! The correct answer is: " + questions[currentIndex].correctAns + "</p>");
-//}
-
-// if (userGuess === questions[currentIndex].correctAns) {
-       // console.log("Lynde")
-   
-);
+        stop();
+        setTimeout(threeSeconds, 2000)
+});
