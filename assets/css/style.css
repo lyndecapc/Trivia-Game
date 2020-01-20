@@ -1,19 +1,22 @@
 body {
-    background-image: url("../images/Ryman.jpg");
-  background-repeat: no-repeat;
-background-size: cover;
+    
+    background: url("../images/Ryman.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    
     font-family: 'Gayathri', sans-serif;
 }
 
 .jumbotron {
     text-align: center;
     font-family: 'Gayathri', sans-serif;
-    color: rgb(10, 2, 19);
+    color: rgb(243, 240, 245);
     font-size: 80px;
-} 
+}
 
 h2 {
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -35,8 +38,8 @@ p {
 .buttons {
     padding-left: 300px;
     padding-right: 300px;
-   
-    
+
+
 }
 
 #results {
@@ -48,12 +51,8 @@ p {
 .wrapper {
     background: rgba(147, 150, 147, 0.6);
     position: relative;
-    border: 3px xdouble black;
+    border: 5px double black;
     width: 60%;
     margin: 0 auto;
-   
-    
 
-    
-    
 }
