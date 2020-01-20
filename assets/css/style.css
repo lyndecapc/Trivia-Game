@@ -18,7 +18,7 @@ h2 {
 }
 
 #timeDisplay {
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -33,12 +33,27 @@ p {
 }
 
 .buttons {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 300px;
+    padding-right: 300px;
+   
+    
 }
 
 #results {
     text-align: center;
     color: white;
     font-size: larger;
+}
+
+.wrapper {
+    background: rgba(147, 150, 147, 0.6);
+    position: relative;
+    border: 3px xdouble black;
+    width: 60%;
+    margin: 0 auto;
+   
+    
+
+    
+    
 }
