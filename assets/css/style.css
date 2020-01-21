@@ -39,8 +39,12 @@ p {
 }
 
 .buttons {
-    padding-left: 300px;
-    padding-right: 300px;
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
+    width: 100%;
+    text-align: center;
 
 
 }
@@ -63,9 +67,11 @@ p {
     width: 60%;
     height: 600px;
     margin: 0 auto;
-
 }
 
 h3 {
     color: white;
 }
+
+
+@media screen and (max-width: 640px) {}
