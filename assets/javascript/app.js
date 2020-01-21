@@ -1,19 +1,5 @@
-//USER STORY: page loads, user sees welcome message or instructions and start button. 
-//user clicks start button, welcome screen/instructions go away, and they see a timer that is counting down. They also see 1st question and answer choices
-//if user chooses answer: message displayed indicates if question was correct or incorrect. if incorrect, correct answer is displayed.
-//after 3 seconds, the next question is displayed
-//if time runs out before user picks an answer, the correct answer is shown
-//after 3 seconds, the next question is displayed
-//once all questions/correct answers have been displayed, a results screen appears with number of correct, incorrect, and unanswered questions
-//also will see a restart button
-//if they click the restart button, the quiz starts over
-//HTML PLANNING: 
-//Three main sections: Welcome screen and start button, questions div with place for timer, the question text and the answers (dynamic or hard coded)
-//results div with place for correct, incorrect, and unanswered questions stats AND restart button
-//CREATE: basic HTML
-//PSEUDOCODE
+//PSEUDO-CODE
 
-//Page loads with 0correct divs showing
 $(document).ready(
     $("#game").hide(),
     $("#results").hide()
@@ -22,9 +8,19 @@ $(document).ready(
 //GLOBAL VARIABLES and ARRAYS
 //questions and answer arrays
 var questions = [{
+        text: "The AT&T building, an iconic Nashville skyline fixture and the tallest building in Tennessee, is also referred to by this nickname?",
+        answers: ["Batman Building", "505", "Pinnacle", "Bridgestone Tower"],
+        correctAns: "Batman Building"
+    },
+    {
         text: "What long-time game show host was at one time a Nashville weather personality?",
         answers: ["Alex Trebek", "Steve Harvey", "Wayne Brady", "Pat Sajak"],
         correctAns: "Pat Sajak"
+    },
+    {
+        text: "What famous TV personality got her start in television as the first African-American female news anchor at Nashville's WLAC-TV?",
+        answers: ["Wendy Williams", "Oprah Winfrey", "Whoopi Goldberg", "Robin Roberts"],
+        correctAns: "Oprah Winfrey"
     },
     {
         text: "What was the Music Row destination where you could ride a mechanical bull?",
@@ -32,14 +28,29 @@ var questions = [{
         correctAns: "Gilley's"
     },
     {
+        text: "What two famous race horses hail from Nashville's Belle Meade plantation?",
+        answers: ["Secretariat and American Pharoah", "Man o' War and Red Rum", "Native Dancer and Affirmed", "Seabiscuit and War Admiral"],
+        correctAns: "Seabiscuit and War Admiral"
+    },
+    {
         text: "What was the #1 tourist attraction in Nashville until 1997?",
         answers: ["The Grand Ole Opry", "Opryland", "Tootsie's", "Music Row"],
         correctAns: "Opryland"
+    },
+    {
+        text: "What famous Nashville music venue is known as the 'Mother Church of Country Music'?",
+        answers: ["The Grand Ole Opry", "Ryman Auditorium", "Bluebird Cafe", "The Station Inn"],
+        correctAns: "Ryman Auditorium"
+    },
+    {
+        text: "Which of the following is NOT one of Nashville's nicknames?",
+        answers: ["The Queen of the Cumberland", "Smashville", "Music City, USA", "Athens of the South"],
+        correctAns: "The Queen of the Cumberland"
     }
 ];
 
 //global variables
-var timeRemaining = 5;
+var timeRemaining = 20;
 var timerInterval;
 var correct = 0;
 var wrong = 0;
@@ -108,7 +119,7 @@ function startTimer() {
 function stop() {
     clearInterval(timerInterval);
     clockRunning = false;
-    timeRemaining = 5;
+    timeRemaining = 20;
 };
 
 //OTHER FUNCTIONS:
@@ -185,5 +196,5 @@ $(".answer").on("click", function () {
     $(".correct").html("Correct:" + correct);
     $(".incorrect").html("Incorrect:" + wrong);
     stop();
-    setTimeout(threeSeconds, 2000)
+    setTimeout(threeSeconds, 2500)
 });

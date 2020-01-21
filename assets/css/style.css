@@ -1,6 +1,6 @@
 body {
 
-    background: url("../images/Ryman.jpg");
+    background: url("../images/bwnight.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Gayathri', sans-serif;
@@ -11,6 +11,7 @@ body {
     font-family: 'Gayathri', sans-serif;
     color: rgb(243, 240, 245);
     font-size: 80px;
+    height: 175px;  
 }
 
 h2 {
@@ -45,6 +46,8 @@ p {
     margin-top: -5em;
     width: 100%;
     text-align: center;
+    padding-left: 250px;
+    padding-right: 250px;
 
 
 }
