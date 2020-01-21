@@ -32,6 +32,11 @@ p {
 }
 
 #welcome {
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
+    width: 100%;
     text-align: center;
 }
 
@@ -43,6 +48,11 @@ p {
 }
 
 #results {
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
+    width: 100%;
     text-align: center;
     color: white;
     font-size: larger;
@@ -53,6 +63,7 @@ p {
     position: relative;
     border: 5px double black;
     width: 60%;
+    height: 600px;
     margin: 0 auto;
 
 }
