@@ -13,7 +13,7 @@
 //CREATE: basic HTML
 //PSEUDOCODE
 
-//Page loads with correct divs showing
+//Page loads with 0correct divs showing
 $(document).ready(
     $("#game").hide(),
     $("#results").hide()
@@ -46,6 +46,9 @@ var wrong = 0;
 var currentIndex = 0; //#question currently on
 var clockRunning = false;
 
+$(".correct").html("Correct:" + correct);
+$(".incorrect").html("Incorrect:" + wrong);
+
 
 //FUNCTIONS
 //TIMER FUNCTIONS:
@@ -59,8 +62,8 @@ function threeSeconds() {
     currentIndex++
 
     if (currentIndex === questions.length) {
-        $("#results").show();
         $("#game").hide();
+        $("#results").show();
 
     } else {
         displayQuestion();
@@ -148,6 +151,10 @@ $("#restart").on("click", function () {
     $("#welcome").hide();
     $("#results").hide();
     $("#game").show();
+    $(".correct").empty();
+    $(".incorrect").empty();
+    correct = 0;
+    wrong = 0;
     currentIndex = 0;
     startTimer();
     displayQuestion();
@@ -160,21 +167,23 @@ $("#restart").on("click", function () {
 //after three seconds, increment currentIndex and call display questionfunction
 
 $(".answer").on("click", function () {
-        console.log("Lynde")
+    console.log("Lynde")
 
-        var userGuess = $(this).find('h3').text();
-        console.log(userGuess);
+    var userGuess = $(this).find('h3').text();
+    console.log(userGuess);
 
-        console.log(currentIndex);
-        if (userGuess === questions[currentIndex].correctAns) {
-            correct++;
-            $("#answers").html("<p>Correct!</p>");
+    console.log(currentIndex);
+    if (userGuess === questions[currentIndex].correctAns) {
+        correct++;
+        $("#answers").html("<p>Correct!</p>");
 
-        } else {
-            wrong++;
-            $("#answers").html("<p>Wrong! The correct answer is: " + questions[currentIndex].correctAns + "</p>");
-        }
+    } else {
+        wrong++;
+        $("#answers").html("<p>Wrong! The correct answer is: " + questions[currentIndex].correctAns + "</p>");
+    }
 
-        stop();
-        setTimeout(threeSeconds, 2000)
+    $(".correct").html("Correct:" + correct);
+    $(".incorrect").html("Incorrect:" + wrong);
+    stop();
+    setTimeout(threeSeconds, 2000)
 });
