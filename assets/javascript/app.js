@@ -186,15 +186,15 @@ $(".answer").on("click", function () {
     console.log(currentIndex);
     if (userGuess === questions[currentIndex].correctAns) {
         correct++;
-        $("#answers").html("<p>Correct!</p>");
+        $("#answers").html("<h2>Correct!</h2>");
 
     } else {
         wrong++;
-        $("#answers").html("<p>Wrong! The correct answer is: " + questions[currentIndex].correctAns + "</p>");
+        $("#answers").html("<h2>Wrong! The correct answer is: " + questions[currentIndex].correctAns + "</h2>");
     }
 
-    $(".correct").html("Correct:" + correct);
-    $(".incorrect").html("Incorrect:" + wrong);
+    $(".correct").html("<h2>Correct:" + correct + "</h2>");
+    $(".incorrect").html("<h2>Incorrect:" + wrong + "</h2");
     stop();
     setTimeout(threeSeconds, 2500)
 });
