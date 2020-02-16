@@ -1,3 +1,7 @@
+https://lyndecapc.github.io/Trivia-Game/
+
+
+
 //USER STORY: page loads, user sees welcome message or instructions and start button. 
 //user clicks start button, welcome screen/instructions go away, and they see a timer that is counting down. They also see 1st question and answer choices
 //if user chooses answer: message displayed indicates if question was correct or incorrect. if incorrect, correct answer is displayed.
